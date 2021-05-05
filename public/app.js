@@ -2,7 +2,7 @@
 
 
 function loadData(){
-    return fetch("http://localhost:3000/home");
+    return fetch("https://damp-ridge-05410.herokuapp.com/home");
 }
 
 
