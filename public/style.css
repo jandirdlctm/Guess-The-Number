@@ -1,0 +1,46 @@
+.lobby{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.players{
+    background-color: black;
+}
+
+.players h1{
+    color: white;
+    padding-top: 5px;
+}
+
+.player-log{
+    background-color: gray;
+    height: 65px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 5px;
+
+}
+
+.start-btn{
+    display: block;
+    margin-top: 10px;
+}
+
+.game-mode{
+    text-align: center;
+    margin-top: 10%; 
+}
+
+.submit-btn{
+    margin-top: 10px;
+}
+
+.results{
+    color: green;
+    text-align: center;
+}

@@ -1,0 +1,67 @@
+<!-- html client for web sockets -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Web Sockets</title>
+    </head>
+    <body>
+        <div id="app">
+            
+            <div v-if="lobbyMode" class="lobby">
+                <div class="game-title">
+                    <h1>WELCOME TO GUESS THE NUMBER GAME</h1>
+                </div>
+                <div>
+                    Enter Name: <input type="text" v-model="playerName">
+                    <button v-on:click="submitName">Ready</button>
+                </div>
+                <div class="players">
+                    <h1>Current Players</h1>
+                    <div class="player-log">
+                        <ul>
+                            <li v-for="player in players">
+                                {{player.playerName}} is player {{player.playerPosition}} and is ready to start.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="start-btn">
+                    <button v-if="gameReadyToStart" v-on:click="startGame">START GAME</button>
+                </div>
+            </div>
+
+            <div v-if="gameMode" class="game-mode">
+                <h1> GUESS A NUMBER FROM 1-10 </h1>
+                The number i choose is <input type="text" v-model="submission">
+                <button v-on:click="submitAnswer" class="submit-btn">Submit Guess</button>
+            </div>
+
+            <div class="results">
+                <div v-if="scoreMode && playerOneWon">
+                    <h1>Player One {{playerOneName}} won with a score of {{playerOneScore}} to {{playerTwoScore}}</h1>
+                </div>
+                <div v-if="scoreMode && playerTwoWon">
+                    <h1>Player Two {{playerTwoName}} won with a score of {{playerTwoScore}} to {{playerOneScore}}</h1>
+                </div>
+                <div v-if="scoreMode && playersTied">
+                    <h1>Players One {{playerOneName}} and Two {{playerTwoName}} tied with a score of {{playerOneScore}} to {{playerTwoScore}}</h1>
+                </div>
+            </div>
+           
+            
+
+           
+            
+        </div>
+
+
+        <!-- scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+
